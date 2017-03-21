@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B976C38-56EA-4152-8345-68DAB2EEC2AC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{1123CFB7-C761-49D0-B061-817A52CE2B32}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SchoolManagement.Model</RootNamespace>
-    <AssemblyName>SchoolManagement.Model</AssemblyName>
+    <RootNamespace>SchoolManagement.ConsoleApplication</RootNamespace>
+    <AssemblyName>SchoolManagement.ConsoleApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,8 +44,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,53 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchoolManagmentModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolManagmentModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SchoolManagmentModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolManagmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SchoolManagmentModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolManagmentModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>SchoolManagmentModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="SchoolManagmentModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SchoolManagmentModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="SchoolManagmentModel.edmx.diagram">
-      <DependentUpon>SchoolManagmentModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SchoolManagmentModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchoolManagmentModel.edmx</DependentUpon>
-      <LastGenOutput>SchoolManagmentModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="SchoolManagmentModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchoolManagmentModel.edmx</DependentUpon>
-      <LastGenOutput>SchoolManagmentModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\SchoolManagement.Manager\SchoolManagement.Manager.csproj">
+      <Project>{1b87d821-b5f7-43d7-9dee-9b8595016097}</Project>
+      <Name>SchoolManagement.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SchoolManagement.Model\SchoolManagement.Model.csproj">
+      <Project>{2B976C38-56EA-4152-8345-68DAB2EEC2AC}</Project>
+      <Name>SchoolManagement.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
