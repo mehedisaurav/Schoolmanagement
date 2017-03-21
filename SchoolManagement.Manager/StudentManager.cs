@@ -38,8 +38,11 @@ namespace SchoolManagement.Manager
            Student s = Db.Students.FirstOrDefault(std => std.Id == id);
            ;
            return s;
-
-
        }
+
+       public List<Student> GetStudents()
+       {
+           return Db.Students.ToList();
+       } 
    }
 }
